@@ -38,7 +38,7 @@ ExternalProject_Add(seqlib
   SOURCE_DIR ${CMAKE_SOURCE_DIR}/SeqLib
   BUILD_IN_SOURCE 1 # why do we have to build in source?
   CONFIGURE_COMMAND ./configure
-  BUILD_COMMAND $(MAKE) CXXFLAGS='-std=c++14'
+  BUILD_COMMAND $(MAKE) CXXFLAGS='-std=c++14 -DNO_WARN_X86_INTRINSICS'
   INSTALL_COMMAND $(MAKE) install)
 ExternalProject_Get_property(seqlib SOURCE_DIR)
 set(seqlib_INCLUDE "${SOURCE_DIR}")
