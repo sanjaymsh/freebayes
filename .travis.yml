@@ -16,4 +16,4 @@ before_install:
   - gcc --version && g++ --version
   - sudo apt-get install -qq bc samtools parallel
 script:
-  - make -j2 -DNO_WARN_X86_INTRINSICS && make -j2 test
+  - make -j2 MAKEFLAG='-DNO_WARN_X86_INTRINSICS' && make -j2 test
